@@ -1,0 +1,21 @@
+import * as readline from "readline";
+
+const rl = readline.createInterface({
+ input: process.stdin,
+ output: process.stdout,
+});
+
+rl.question("Digite 1º nota do estudante: ", (InputNota) =>{
+    const nota = parseFloat(InputNota);
+
+    if (isNaN(nota) || nota < 0 || nota > 100){
+        console.log("Por Favor, digite um valor válido");
+    } else {
+        if(nota>= 60){
+            console.log("Aluno aprovado!", nota);
+        } else {
+            console.log("ALuno reprovado!", nota);
+        }
+        }
+    rl.close();
+});
